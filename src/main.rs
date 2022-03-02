@@ -1,6 +1,12 @@
-use std::env::{args, Args};
+use std::io;
 
 fn main() {
-    let args: Args = args();
-    println!("{:?}", args);
+  println!("Please input your guess.");
+  let mut guess = String::new();
+
+  io::stdin()
+    .read_line(&mut guess)
+    .expect("Failed to read line.");
+
+  println!("You guessed: {}", guess);
 }
